@@ -1,12 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    # URLs de las apps existentes
-    path('departamento/', include('applications.departamento.urls')),  # Prefijo departamento
+    path('departamento/', include('applications.departamento.urls')),
     path('', include('applications.home.urls')),  # Home en la raíz
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
