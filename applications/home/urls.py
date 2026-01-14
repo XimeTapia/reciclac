@@ -1,9 +1,6 @@
 from django.urls import path
-from django.http import HttpResponse
-
-def home(request):
-    return HttpResponse("Home OK")
+from . import views  # importa views.py
 
 urlpatterns = [
-    path('', home, name='home'),
+    path('', views.home_view, name='home'),
 ]
