@@ -6,7 +6,11 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'empleado.settings.local')
+    os.environ.setdefault(
+    'DJANGO_SETTINGS_MODULE',
+    'empleado.settings.prod'
+)
+
     #os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'applications.settings.base')
     
     try:
@@ -22,4 +26,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
