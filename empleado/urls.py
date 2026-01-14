@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, re_path, include
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -7,6 +7,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # URLs de las apps existentes
-    re_path('', include('applications.departamento.urls')),
-    re_path('', include('applications.home.urls')),
+    path('departamento/', include('applications.departamento.urls')),  # Prefijo departamento
+    path('', include('applications.home.urls')),  # Home en la raíz
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
