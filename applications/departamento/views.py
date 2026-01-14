@@ -23,3 +23,8 @@ class NewDepartamentoView(FormView):
             activo=True
         )
         return super().form_valid(form)
+
+from django.shortcuts import render
+
+def home_view(request):
+    return render(request, 'index.html')  # o 'home.html' según quieras
